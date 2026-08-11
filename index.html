@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashi Sugandhi — Creative Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="wipe">
+  <svg class="wipe-eye" viewBox="0 0 100 60" fill="none">
+    <path d="M5 30 Q50 -8 95 30 Q50 68 5 30Z" fill="var(--ink)" opacity=".9"/>
+    <circle cx="50" cy="30" r="15" fill="var(--paper)"/>
+    <circle cx="50" cy="30" r="7" fill="var(--ink)"/>
+    <circle cx="47" cy="27" r="2.4" fill="var(--paper)"/>
+    <path d="M12 30 Q50 8 88 30" stroke="var(--paper)" stroke-width="2.5" opacity=".6"/>
+  </svg>
+</div>
+
+<nav>
+  <div class="logo">ashi*</div>
+  <ul>
+    <li><a href="#about">about</a></li>
+    <li><a href="#projects">work</a></li>
+    <li><a href="#offkeyboard">wins</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <span class="hero-scribble" style="top:14%;left:8%;">hey, i'm—</span>
+
+  <!-- doodle: hand-drawn eye, nod to the eerie-collage reference -->
+  <div class="doodle" style="width:90px;height:60px;top:10%;right:12%;transform:rotate(-8deg);">
+    <svg viewBox="0 0 100 60" fill="none" stroke="var(--paper)" stroke-width="3">
+      <path d="M5 30 Q50 -5 95 30 Q50 65 5 30Z"/>
+      <circle cx="50" cy="30" r="14" fill="var(--pink)" stroke="var(--paper)"/>
+      <circle cx="50" cy="30" r="6" fill="var(--ink)"/>
+      <path d="M15 30 Q50 12 85 30" stroke="var(--yellow)" stroke-width="2"/>
+    </svg>
+  </div>
+  <!-- doodle: tape strip -->
+  <div class="doodle" style="width:80px;height:24px;top:6%;left:34%;transform:rotate(6deg);">
+    <svg viewBox="0 0 80 24"><rect width="80" height="24" fill="var(--yellow)" opacity=".8"/></svg>
+  </div>
+  <!-- doodle: scribble squiggle -->
+  <div class="doodle" style="width:70px;height:70px;bottom:16%;left:4%;">
+    <svg viewBox="0 0 70 70" fill="none" stroke="var(--pink)" stroke-width="3" stroke-linecap="round">
+      <path d="M5 35 Q20 5 35 35 T65 35"/>
+    </svg>
+  </div>
+
+  <h1 class="cutout-title" id="heroTitle">
+    <span class="word">
+      <span class="cutout-letter c0">A</span><span class="cutout-letter c1">S</span><span class="cutout-letter c2">H</span><span class="cutout-letter c3">I</span>
+    </span>
+    <span class="word">
+      <span class="cutout-letter c4">S</span><span class="cutout-letter c5">U</span><span class="cutout-letter c1">G</span><span class="cutout-letter c2">A</span><span class="cutout-letter c0">N</span><span class="cutout-letter c3">D</span><span class="cutout-letter c5">H</span><span class="cutout-letter c1">I</span>
+    </span>
+  </h1>
+  <p class="hero-tag">Computer science student who builds things that work <em>and</em> makes them look like they belong on a wall. Frontend-leaning full-stack dev with an AI/API habit and a sketchbook problem.</p>
+  <div class="scroll-cue"><span class="line"></span> scroll</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section-in" data-wipe="#ff3d7f">
+  <div class="doodle" style="width:60px;height:60px;top:6%;right:8%;opacity:.7;">
+    <svg viewBox="0 0 60 60" fill="none" stroke="var(--pink)" stroke-width="3" stroke-linecap="round">
+      <path d="M10 40 Q15 15 30 20 Q45 25 50 10"/>
+    </svg>
+  </div>
+  <span class="eyebrow">→ who's this</span>
+  <h2 class="sec-title">About the chaos</h2>
+  <div class="about-grid">
+    <div class="avatar-frame">
+      <img src="images/profile.jpg" alt="Ashi Sugandhi" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="avatar-fallback">
+        <svg viewBox="0 0 120 120" fill="none">
+          <circle cx="60" cy="60" r="56" stroke="var(--ink)" stroke-width="3" stroke-dasharray="6 5"/>
+          <circle cx="45" cy="55" r="5" fill="var(--ink)"/>
+          <circle cx="75" cy="55" r="5" fill="var(--ink)"/>
+          <path d="M42 78 Q60 92 78 78" stroke="var(--ink)" stroke-width="3" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span>add photo →<br>images/profile.jpg</span>
+      </div>
+      <span class="avatar-tape"></span>
+    </div>
+    <div class="about-text">
+      <p><strong>CS undergrad at VIT Bhopal</strong> who treats code like a scrapbook — cut it up, remix it, make it mine. I build with React, Node, and whatever API will let me automate something tedious into something delightful. Same energy goes into clean UI and prompts that actually behave.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK MARQUEE -->
+<section id="stack" class="section-in" data-wipe="#3dc1f2">
+  <span class="eyebrow">→ the stack</span>
+  <h2 class="sec-title">Skills, on rotation</h2>
+  <div class="stack-wrap">
+    <div class="stack-glow"></div>
+    <div class="stack-track" id="stackTrack">
+      <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt=""> Java</span>
+      <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt=""> JavaScript</span>
+      <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt=""> React</span>
+      <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt=""> Node.js</span>
+      <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt=""> HTML5</span>
+      <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt=""> CSS3</span>
+      <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt=""> Tailwind</span>
+      <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt=""> SQL</span>
+      <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt=""> Firebase</span>
+      <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt=""> Git</span>
+      <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt=""> GitHub</span>
+      <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt=""> Postman</span>
+      <!-- duplicate set for seamless loop -->
+      <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt=""> Java</span>
+      <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt=""> JavaScript</span>
+      <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt=""> React</span>
+      <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt=""> Node.js</span>
+      <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt=""> HTML5</span>
+      <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt=""> CSS3</span>
+      <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt=""> Tailwind</span>
+      <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt=""> SQL</span>
+      <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt=""> Firebase</span>
+      <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt=""> Git</span>
+      <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt=""> GitHub</span>
+      <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt=""> Postman</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section-in" data-wipe="#f5e94d">
+  <span class="eyebrow">→ the work</span>
+  <h2 class="sec-title">Things I built</h2>
+
+  <div class="project-card reveal">
+    <div class="tape"></div>
+    <div class="browser-frame">
+      <div class="browser-bar"><span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span></div>
+      <div class="browser-preview bp1">
+        <span class="preview-big">✨</span>
+        <span class="preview-title">Smart Summarize</span>
+      </div>
+    </div>
+    <h3>Smart Summarize <span class="project-num">01</span></h3>
+    <p class="project-desc">An AI text summarizer that turns long-form text into structured bullet points using the Gemini API — cutting reading time by up to 70%, with adjustable summary length and live reading-time analytics.</p>
+    <div class="stack">
+      <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="">JavaScript</span>
+      <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="">HTML</span>
+      <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="">CSS</span>
+      <span>Gemini API</span>
+    </div>
+    <div class="project-ctas">
+      <a href="#" class="btn-demo">Live Demo</a>
+      <a href="#" class="btn-code">GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-card reveal">
+    <div class="tape"></div>
+    <div class="browser-frame">
+      <div class="browser-bar"><span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span></div>
+      <div class="browser-preview bp2">
+        <span class="preview-big">🎒</span>
+        <span class="preview-title">Student Essentials</span>
+      </div>
+    </div>
+    <h3>Student Essentials <span class="project-num">02</span></h3>
+    <p class="project-desc">A centralized student platform combining resource management, task tracking, and reviews — with Firebase Auth and Realtime Database wired in, built to hold up under concurrent users.</p>
+    <div class="stack">
+      <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="">JavaScript</span>
+      <span>PHP</span>
+      <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="">SQL</span>
+      <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="">Firebase</span>
+    </div>
+    <div class="project-ctas">
+      <a href="#" class="btn-demo">Live Demo</a>
+      <a href="#" class="btn-code">GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-card reveal">
+    <div class="tape"></div>
+    <div class="browser-frame">
+      <div class="browser-bar"><span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span></div>
+      <div class="browser-preview bp3">
+        <span class="preview-big">🧭</span>
+        <span class="preview-title">Travel Planner Bot</span>
+      </div>
+    </div>
+    <h3>Travel Planner Chatbot <span class="project-num">03</span></h3>
+    <p class="project-desc">An AI-powered travel chatbot orchestrating Google Maps, Skyscanner, and OpenWeather in real time, with secure Firebase sessions and tuned API workflows for performance.</p>
+    <div class="stack">
+      <span>React Native</span>
+      <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="">Node.js</span>
+      <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="">Firebase</span>
+      <span>Dialogflow</span>
+    </div>
+    <div class="project-ctas">
+      <a href="#" class="btn-demo">Live Demo</a>
+      <a href="#" class="btn-code">GitHub</a>
+    </div>
+  </div>
+
+  <div class="marquee-wrap">
+    <div class="marquee" id="marquee">
+      <span>BUILD</span><span class="accent">•</span><span>BREAK</span><span class="accent">•</span><span>DEBUG</span><span class="accent">•</span><span>SHIP</span><span class="accent">•</span><span>REPEAT</span><span class="accent">•</span>
+      <span>BUILD</span><span class="accent">•</span><span>BREAK</span><span class="accent">•</span><span>DEBUG</span><span class="accent">•</span><span>SHIP</span><span class="accent">•</span><span>REPEAT</span><span class="accent">•</span>
+    </div>
+  </div>
+</section>
+
+<!-- FULL STACK BREAKDOWN -->
+<section id="fullstack" class="section-in" data-wipe="#ff7a3d">
+  <span class="eyebrow">→ the breakdown</span>
+  <h2 class="sec-title">Full stack, categorized</h2>
+  <div class="fs-grid">
+    <div class="fs-col">
+      <span class="fs-label">Frontend</span>
+      <div class="fs-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="">JavaScript</div>
+      <div class="fs-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="">React</div>
+      <div class="fs-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="">Tailwind CSS</div>
+      <div class="fs-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="">HTML5</div>
+      <div class="fs-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="">CSS3</div>
+    </div>
+    <div class="fs-col">
+      <span class="fs-label">Backend</span>
+      <div class="fs-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="">Node.js</div>
+      <div class="fs-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="">Java</div>
+      <div class="fs-item"><span class="fs-emoji">🔌</span>REST APIs</div>
+      <div class="fs-item"><span class="fs-emoji">🔌</span>WebSockets</div>
+    </div>
+    <div class="fs-col">
+      <span class="fs-label">Database</span>
+      <div class="fs-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="">SQL</div>
+      <div class="fs-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="">Firebase</div>
+    </div>
+    <div class="fs-col">
+      <span class="fs-label">Tools</span>
+      <div class="fs-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="">Git</div>
+      <div class="fs-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="">GitHub</div>
+      <div class="fs-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="">Postman</div>
+      <div class="fs-item"><span class="fs-emoji">⚙️</span>DevOps</div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTS -->
+<section id="certs" class="section-in" data-wipe="#3dc1f2">
+  <span class="eyebrow">→ paper trail</span>
+  <h2 class="sec-title">Certifications</h2>
+  <div class="cert-list">
+    <a href="#" target="_blank" rel="noopener" class="cert-row"><span>AWS Solutions Architect</span><span class="stamp">view ↗</span></a>
+    <a href="#" target="_blank" rel="noopener" class="cert-row"><span>IBM DevOps Fundamentals</span><span class="stamp">view ↗</span></a>
+    <a href="#" target="_blank" rel="noopener" class="cert-row"><span>IBM DevOps, Agile &amp; Design Thinking</span><span class="stamp">view ↗</span></a>
+    <a href="#" target="_blank" rel="noopener" class="cert-row"><span>IBM Agile Methodologies</span><span class="stamp">view ↗</span></a>
+  </div>
+</section>
+
+<!-- OFF THE KEYBOARD -->
+<section id="offkeyboard" class="section-in" data-wipe="#7ed957">
+  <span class="eyebrow">→ off the keyboard</span>
+  <h2 class="sec-title">Wins &amp; wildcards</h2>
+  <div class="badges-grid">
+    <div class="ach-card"><span class="icon">🏐</span><h4>National-level volleyball</h4><p>Team sport, bigger process than one person.</p></div>
+    <div class="ach-card"><span class="icon">🏊</span><h4>State-level swimmer</h4><p>Competitive inter-state tournaments.</p></div>
+    <div class="ach-card"><span class="icon">🎖️</span><h4>Former NCC Cadet</h4><p>Discipline, drilled in early.</p></div>
+    <div class="ach-card"><span class="icon">🗣️</span><h4>MUN Runner-up</h4><p>Govt. College of Engineering, Nagpur.</p></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section-in" data-wipe="#7ed957">
+  <span class="eyebrow">→ let's talk</span>
+  <h2 class="sec-title">Got a project?<br>Let's make it weird &amp; good.</h2>
+  <a class="big-link" href="mailto:ashisugandhi21@gmail.com">ashisugandhi21@gmail.com</a>
+  <div class="contact-links">
+    <a href="tel:+918269416039">+91 8269416039</a>
+    <a href="#" onclick="return false;">LinkedIn ↗</a>
+    <a href="#" onclick="return false;">GitHub ↗</a>
+    <a href="#" onclick="return false;">LeetCode ↗</a>
+  </div>
+</section>
+
+<footer>made with chaos, coffee &amp; css — © 2026 Ashi Sugandhi</footer>
+
+<!-- MASCOT -->
+<div id="mascot">
+  <svg viewBox="0 0 200 200" width="100%" height="100%">
+    <g id="mascotG">
+      <ellipse cx="100" cy="120" rx="62" ry="56" fill="#ff3d7f"/>
+      <path d="M45 95 Q100 40 155 95" fill="none" stroke="#f5e94d" stroke-width="8" stroke-linecap="round"/>
+      <circle cx="78" cy="110" r="10" fill="#121212"/>
+      <circle cx="122" cy="110" r="10" fill="#121212"/>
+      <circle cx="81" cy="107" r="3" fill="#fff"/>
+      <circle cx="125" cy="107" r="3" fill="#fff"/>
+      <path id="mascotMouth" d="M78 138 Q100 155 122 138" fill="none" stroke="#121212" stroke-width="6" stroke-linecap="round"/>
+      <path d="M55 150 Q40 165 30 158" fill="none" stroke="#ff3d7f" stroke-width="8" stroke-linecap="round"/>
+      <path d="M145 150 Q160 165 170 158" fill="none" stroke="#ff3d7f" stroke-width="8" stroke-linecap="round"/>
+    </g>
+  </svg>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
