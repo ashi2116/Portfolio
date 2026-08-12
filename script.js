@@ -5,7 +5,7 @@ const cursor = document.getElementById('cursor');
 window.addEventListener('mousemove', e=>{
   gsap.to(cursor,{x:e.clientX,y:e.clientY,duration:.15,ease:'power2.out'});
 });
-document.querySelectorAll('a, .project-card, .ach-card, .cert-row, .fs-item, .stack-pill').forEach(el=>{
+document.querySelectorAll('a, .project-card, .ach-card, .cert-row').forEach(el=>{
   el.addEventListener('mouseenter',()=>cursor.classList.add('big'));
   el.addEventListener('mouseleave',()=>cursor.classList.remove('big'));
 });
@@ -41,26 +41,25 @@ gsap.fromTo('.avatar-frame',{opacity:0,scale:.8,rotate:-14},{
   opacity:1, scale:1, rotate:-3, duration:.7, ease:"back.out(2)",
   scrollTrigger:{trigger:'.avatar-frame', start:"top 90%"}
 });
-gsap.utils.toArray('.fs-item').forEach((el,i)=>{
-  gsap.fromTo(el,{opacity:0,x:-10},{
-    opacity:1, x:0, duration:.4, ease:"power2.out", delay:(i%6)*0.05,
-    scrollTrigger:{trigger:el, start:"top 94%"}
-  });
+gsap.fromTo('.photo-sticker',{opacity:0,scale:.5,rotate:20},{
+  opacity:1, scale:1, rotate:9, duration:.6, ease:"back.out(2.5)", delay:.25,
+  scrollTrigger:{trigger:'.avatar-frame', start:"top 90%"}
 });
-gsap.utils.toArray('.fs-label').forEach((el)=>{
-  gsap.fromTo(el,{opacity:0,y:-8},{
-    opacity:1, y:0, duration:.4, ease:"power2.out",
+gsap.utils.toArray('.fs-row').forEach((el,i)=>{
+  gsap.fromTo(el,{opacity:0,y:14},{
+    opacity:1, y:0, duration:.5, ease:"power2.out", delay:i*0.08,
     scrollTrigger:{trigger:el, start:"top 92%"}
   });
 });
 
-/* section-to-section wipe transition + whole-section entrance */
+/* section-to-section transition: a colorful eye winks in, no screen flash */
 const wipe = document.getElementById('wipe');
 const wipeEye = wipe.querySelector('.wipe-eye');
+const wipeIris = document.getElementById('wipeIris');
+const wipeGlow = wipe.querySelector('.wipe-glow');
 
 gsap.utils.toArray('.section-in').forEach((sec, i)=>{
   const color = sec.dataset.wipe || '#ff3d7f';
-  const ltr = i % 2 === 0; // alternate sweep direction per section
 
   ScrollTrigger.create({
     trigger: sec,
@@ -68,13 +67,16 @@ gsap.utils.toArray('.section-in').forEach((sec, i)=>{
     once: true,
     onEnter: () => {
       const tl = gsap.timeline({defaults:{ease:"power2.inOut"}});
-      tl.set(wipe, {background:color, opacity:1, xPercent: ltr ? -110 : 110})
-        .set(wipeEye, {scale:0, opacity:0, rotate: ltr ? -12 : 12})
-        .to(wipe, {xPercent:0, duration:.5})
-        .to(wipeEye, {scale:1, opacity:1, rotate:0, duration:.32, ease:"back.out(2.2)"}, "-=.16")
-        .to(wipeEye, {scale:0, opacity:0, duration:.18, ease:"power1.in"}, "+=.08")
-        .to(wipe, {xPercent: ltr ? 110 : -110, duration:.5}, "-=.02")
-        .fromTo(sec, {opacity:0, y:40, scale:.985}, {opacity:1, y:0, scale:1, duration:.6, ease:"power3.out"}, "-=.3");
+      tl.set(wipe, {opacity:1})
+        .set(wipeGlow, {background:color, opacity:0, scale:.6})
+        .set(wipeIris, {fill:color})
+        .set(wipeEye, {scale:0, opacity:0, rotate:-10})
+        .to(wipeGlow, {opacity:.35, scale:1, duration:.35}, 0)
+        .to(wipeEye, {scale:1, opacity:1, rotate:0, duration:.32, ease:"back.out(2.2)"}, 0.05)
+        .to(wipeEye, {scale:0, opacity:0, duration:.22, ease:"power1.in"}, "+=.12")
+        .to(wipeGlow, {opacity:0, duration:.3}, "<")
+        .set(wipe, {opacity:0})
+        .fromTo(sec, {opacity:0, y:40, scale:.985}, {opacity:1, y:0, scale:1, duration:.6, ease:"power3.out"}, "-=.4");
     }
   });
 });
@@ -228,12 +230,12 @@ function magnetize(selector, strength, growTo){
     });
   });
 }
-magnetize('.fs-item', 4, 1.04);
 magnetize('.ach-card', 8, 1.04);
 magnetize('.project-card', 4, 1.015);
 magnetize('.btn-demo, .btn-code', 6, 1.08);
 magnetize('.contact-links a', 8, 1.1);
 magnetize('.big-link', 10, 1.06);
+magnetize('.photo-sticker', 8, 1.08);
 
 /* mascot follows the pointer (mouse OR touch drag) with a lag/trail */
 const mascotMouth = document.getElementById('mascotMouth');
@@ -263,7 +265,7 @@ window.addEventListener('pointermove', e=>{
 /* idle bob so it's alive even when the pointer is still */
 gsap.to(mascotG,{y:-8, duration:1.4, repeat:-1, yoyo:true, ease:"sine.inOut"});
 
-document.querySelectorAll('a,.project-card,.ach-card,.cert-row,.fs-item,.stack-pill').forEach(el=>{
+document.querySelectorAll('a,.project-card,.ach-card,.cert-row').forEach(el=>{
   el.addEventListener('mouseenter',()=>{
     gsap.to(mascotG,{scale:1.2, duration:.25});
     mascotMouth.setAttribute('d','M78 145 Q100 165 122 145');
