@@ -37,13 +37,9 @@ gsap.utils.toArray('.cert-row').forEach((el,i)=>{
     scrollTrigger:{trigger:el, start:"top 94%"}
   });
 });
-gsap.fromTo('.avatar-frame',{opacity:0,scale:.8,rotate:-14},{
-  opacity:1, scale:1, rotate:-3, duration:.7, ease:"back.out(2)",
-  scrollTrigger:{trigger:'.avatar-frame', start:"top 90%"}
-});
 gsap.fromTo('.photo-sticker',{opacity:0,scale:.5,rotate:20},{
-  opacity:1, scale:1, rotate:9, duration:.6, ease:"back.out(2.5)", delay:.25,
-  scrollTrigger:{trigger:'.avatar-frame', start:"top 90%"}
+  opacity:1, scale:1, rotate:-6, duration:.6, ease:"back.out(2.5)",
+  scrollTrigger:{trigger:'.avatar-wrap', start:"top 90%"}
 });
 gsap.utils.toArray('.fs-row').forEach((el,i)=>{
   gsap.fromTo(el,{opacity:0,y:14},{
